@@ -25,6 +25,32 @@ Para instalar manualmente a extensão "XSLT em SQL", siga estes passos:
 - Escreva ou edite seu XSLT dentro do SQL e aproveite o realce de sintaxe e o folding de código.
 - Para executar uma consulta SQL, use o atalho de teclado `F5` ou pressione `Ctrl+P`, digite `>XSLT em SQL: Executar SQL` e selecione o comando.
 
+My apologies for the confusion. Here's the revised section:
+
+## Exemplo de Arquivo .xslt.sql
+
+Aqui está um exemplo de um arquivo `.xslt.sql` que demonstra o uso de XSLT embutido em SQL:
+
+```sql
+-- Exemplo de arquivo .xslt.sql
+DECLARE @xmlData XML = '<root><item>Exemplo</item></root>';
+DECLARE @xsltTemplate NVARCHAR(MAX) = '
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/root">
+    <html>
+      <body>
+        <h1><xsl:value-of select="item"/></h1>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>';
+
+-- Aplicar a transformação XSLT ao XML
+SELECT @xmlData.query('sql:variable("@xsltTemplate")');
+```
+
+Este é um exemplo simples de como incorporar XSLT em um arquivo `.xslt.sql` para transformar XML usando uma folha de estilo XSLT.
+
 ## Contribuindo
 
 Contribuições são bem-vindas! Se você deseja melhorar a extensão, sinta-se à vontade para forkar o repositório e enviar suas pull requests.

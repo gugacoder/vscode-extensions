@@ -12,5 +12,6 @@
 #     vsce package
 #
 
+Set-Location -Path $PSScriptRoot
 npm run build
 vsce package --allow-missing-repository

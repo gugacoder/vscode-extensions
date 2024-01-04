@@ -13,13 +13,6 @@ tests/
 *.js.map
 *.ts.map
 
-# Arquivos de documentação e mídia
-*.md
-*.png
-*.gif
-*.jpg
-*.jpeg
-
 # Arquivos de configuração e outros
 *.log
 *.lock

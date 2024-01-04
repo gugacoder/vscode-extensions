@@ -32,21 +32,20 @@ My apologies for the confusion. Here's the revised section:
 Aqui está um exemplo de um arquivo `.xslt.sql` que demonstra o uso de XSLT embutido em SQL:
 
 ```sql
--- Exemplo de arquivo .xslt.sql
-DECLARE @xmlData XML = '<root><item>Exemplo</item></root>';
-DECLARE @xsltTemplate NVARCHAR(MAX) = '
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:template match="/root">
-    <html>
-      <body>
-        <h1><xsl:value-of select="item"/></h1>
-      </body>
-    </html>
-  </xsl:template>
-</xsl:stylesheet>';
+EXEC ml.fn_registrar_template_documento
+    @nome = 'DANFE_NFCE.xslt'
+  , @descricao = 'Template de geração do documento DANFE NFCe a partir de um XML de NFCe'
+  , @tipo_mime_produzido = 'text/html'
+  , @tipo_xml_processado = '{http://www.portalfiscal.inf.br/nfe}nfeProc'
+  , @template_xslt ='
+<xsl:stylesheet
+    version="2.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:nfe="http://www.portalfiscal.inf.br/nfe">
 
--- Aplicar a transformação XSLT ao XML
-SELECT @xmlData.query('sql:variable("@xsltTemplate")');
+  <!-- Template XSLT ... -->
+
+</xsl:stylesheet>'
 ```
 
 Este é um exemplo simples de como incorporar XSLT em um arquivo `.xslt.sql` para transformar XML usando uma folha de estilo XSLT.

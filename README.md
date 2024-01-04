@@ -10,17 +10,20 @@ Esta extensão fornece suporte para a edição e visualização de XSLT em arqui
 
 ## Instalação
 
-Para instalar a extensão, siga estes passos:
+Para instalar manualmente a extensão "XSLT em SQL", siga estes passos:
 
-1. Abra o Visual Studio Code.
-2. Vá para a aba de Extensões (`Ctrl+Shift+X` ou `Cmd+Shift+X` no macOS).
-3. Procure por 'XSLT em SQL' e instale a extensão.
-4. Reinicie o Visual Studio Code.
+1. Obtenha uma cópia do arquivo `xslt-sql-*.vsix`.
+2. Abra o Visual Studio Code.
+3. Acesse a aba de Extensões (`Ctrl+Shift+X` ou `Cmd+Shift+X` no macOS).
+4. Clique no ícone de três pontos (...) no canto superior direito da aba de Extensões.
+5. Escolha "Install from VSIX..." e selecione o arquivo `xslt-sql-*.vsix` baixado.
+6. Siga as instruções na tela para concluir a instalação.
 
 ## Uso
 
 - Abra qualquer arquivo com a extensão `.xslt.sql` com o Visual Studio Code.
 - Escreva ou edite seu XSLT dentro do SQL e aproveite o realce de sintaxe e o folding de código.
+- Para executar uma consulta SQL, use o atalho de teclado `F5` ou pressione `Ctrl+P`, digite `>XSLT em SQL: Executar SQL` e selecione o comando.
 
 ## Contribuindo
 

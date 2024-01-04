@@ -1,0 +1,29 @@
+{
+  "scopeName": "source.xslt-sql",
+  "patterns": [{ "include": "#template" }],
+  "repository": {
+    "template": {
+      "patterns": [
+        { "include": "#xslt"},
+        { "include": "#sql"}
+      ]
+    },
+    "xslt": {
+      "begin": "@template_xslt\\s*=\\s*'",
+      "end": "'",
+      "patterns": [
+        {
+          "include": "text.xml"
+        }
+      ]
+    },
+    "sql": {
+      "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    }
+  },
+  "fileTypes": ["xslt.sql"]
+}

@@ -1,0 +1,43 @@
+# Dependências
+node_modules/
+bower_components/
+
+# Configurações do sistema/IDE
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Pasta de distribuição / build
+dist/
+out/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Arquivos de runtime
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Diretório de testes
+.vscode-test/
+
+# Arquivos de compilação
+*.ts.map
+*.js.map
+
+# Arquivos de empacotamento da extensão
+*.vsix
+
+# Outros arquivos e diretórios
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.tmp

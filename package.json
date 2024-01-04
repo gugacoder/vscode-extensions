@@ -1,0 +1,97 @@
+{
+  "name": "xslt-sql",
+  "displayName": "XSLT em SQL",
+  "description": "Suporte para edição e visualização de XSLT em arquivos SQL",
+  "version": "0.1.0",
+  "publisher": "GugaCoder",
+  "author": "Guga Coder",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:xsltSql.executarSQL"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "language": "xslt-sql",
+        "scopeName": "source.xslt-sql",
+        "path": "./syntaxes/xslt-sql.tmLanguage.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "xslt-sql",
+        "aliases": [
+          "XSLT em SQL"
+        ],
+        "extensions": [
+          ".xslt.sql"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "xsltSql.executarSQL",
+        "title": "XSLT em SQL: Executar SQL"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "xsltSql.executarSQL",
+        "key": "f5",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "XSLT SQL",
+      "properties": {
+        "xsltSql.connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "server": {
+                "type": "string"
+              },
+              "database": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "server",
+              "database",
+              "user",
+              "password"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "mssql": "^7.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.7",
+    "babel-loader": "^9.1.3",
+    "vsce": "^2.15.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

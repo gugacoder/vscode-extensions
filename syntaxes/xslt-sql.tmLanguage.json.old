@@ -1,0 +1,69 @@
+{
+  "scopeName": "source.xslt-sql",
+  "patterns": [
+    {
+      "include": "#sqlBeforeXSLT"
+    },
+    {
+      "include": "#xsltBlock"
+    },
+    {
+      "include": "#sqlAfterXSLT"
+    }
+  ],
+  "repository": {
+    "sqlBeforeXSLT": {
+      "begin": "\\A",  // Começa no início do arquivo
+      "end": "(<xsl:stylesheet)",  // Termina no início do bloco XSLT
+      "beginCaptures": {
+        "0": {
+          "name": "source.sql"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "text.xml"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    },
+    "xsltBlock": {
+      "begin": "(<xsl:stylesheet)",  // Começa no início do bloco XSLT
+      "end": "(</xsl:stylesheet>)",  // Termina no final do bloco XSLT
+      "beginCaptures": {
+        "0": {
+          "name": "text.xml"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "text.xml"
+        }
+      },
+      "patterns": [
+        {
+          "include": "text.xml"
+        }
+      ]
+    },
+    "sqlAfterXSLT": {
+      "begin": "(</xsl:stylesheet>)",  // Começa após o bloco XSLT
+      "end": "\\z",  // Continua até o final do arquivo
+      "beginCaptures": {
+        "0": {
+          "name": "source.sql"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.sql"
+        }
+      ]
+    }
+  },
+  "fileTypes": ["xslt.sql"]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "xslt-sql",
+  "displayName": "XSLT em SQL",
+  "description": "Suporte para edição e visualização de XSLT em arquivos SQL",
+  "version": "0.0.2",
+  "publisher": "GugaCoder",
+  "author": "Guga Coder",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "xslt-sql",
+      "aliases": ["XSLT em SQL", "xslt-sql"],
+      "extensions": [".xslt.sql"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "xslt-sql",
+      "scopeName": "source.xslt-sql",
+      "path": "./syntaxes/xslt-sql.tmLanguage.json"
+    }]
+  }
+}

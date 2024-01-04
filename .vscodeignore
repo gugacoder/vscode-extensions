@@ -1,0 +1,36 @@
+# Ignora todos os arquivos e pastas que começam com '.'
+.**/
+
+# Exclusões específicas
+.vscode-test/**
+node_modules/
+src/
+out/
+test/
+tests/
+*.ts
+*.tsx
+*.js.map
+*.ts.map
+
+# Arquivos de documentação e mídia
+*.md
+*.png
+*.gif
+*.jpg
+*.jpeg
+
+# Arquivos de configuração e outros
+*.log
+*.lock
+yarn.lock
+package-lock.json
+*.config.js
+*.env
+*.env.local
+*.env.development
+*.env.test
+*.env.production
+
+# Compilações da extensão
+*.vsix
